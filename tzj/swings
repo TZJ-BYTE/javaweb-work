@@ -1,0 +1,40 @@
+在Java Swing中，有许多不同的组件可以用来构建图形用户界面（GUI）。以下是一些常用的Swing组件列表：
+
+基本组件：
+JButton: 用于创建按钮，用户可以点击它来执行操作。
+JCheckBox: 用于创建复选框，用户可以选择多个选项。
+JRadioButton: 用于创建单选按钮，用户只能选择一个选项。
+JToggleButton: 用于创建切换按钮，可以保持按下状态。
+JLabel: 用于显示文本或图像。
+JTextField: 用于单行文本输入。
+JPasswordField: 用于密码输入，显示为星号或圆点。
+JTextArea: 用于多行文本输入和显示。
+JScrollBar: 用于滚动视图。
+JSlider: 用于通过滑动条选择一个值。
+JProgressBar: 用于显示任务的进度。
+容器组件：
+JFrame: 代表一个顶层窗口，通常用来包含整个应用程序的GUI。
+JPanel: 一个通用的轻量级容器，可以用来构建其他组件的复杂布局。
+JScrollPane: 提供滚动功能，用于包含超过视图大小的组件。
+JToolBar: 用于创建工具栏，包含按钮和其他组件。
+JTabbedPane: 用于创建选项卡式的界面，可以在不同的面板间切换。
+JLayeredPane: 提供了一个层次化的窗口，允许组件重叠显示。
+JDesktopPane: 用于创建多文档界面（MDI）。
+菜单和弹出组件：
+JMenuBar: 用于创建菜单栏。
+JMenu: 用于创建菜单，可以包含菜单项和其他菜单。
+JMenuItem: 用于创建菜单中的选项。
+JPopupMenu: 用于创建弹出菜单。
+JCheckBoxMenuItem: 用于创建带有复选框的菜单项。
+JRadioButtonMenuItem: 用于创建带有单选按钮的菜单项。
+对话框和窗口：
+JDialog: 用于创建对话框窗口。
+JOptionPane: 用于创建标准对话框，如消息对话框、确认对话框、输入对话框等。
+其他组件：
+JColorChooser: 允许用户选择颜色。
+JFileChooser: 允许用户选择文件或目录。
+JComboBox: 用于创建下拉列表或组合框。
+JTable: 用于显示和编辑表格数据。
+JTree: 用于显示层次化的数据。
+JList: 用于显示列表。
+这些组件是构建Swing应用程序的基础，您可以根据需要选择合适的组件来创建用户界面。每个组件都有自己的一组属性和方法，可以用来定制其外观和行为。
