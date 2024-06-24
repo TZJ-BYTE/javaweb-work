@@ -1,21 +1,26 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.SwingWorker;
 
 public class GameJframe {
-
-    public static void main(String[] args) {
-        // 在Swing组件中显示分割后的图片
-        JFrame frame = new JFrame("Image Splitter");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new BorderLayout());
+    private int[][] inum; // 声明二维数组
+    private ImageIcon[][] icons; // 初始化icons数组
+    private BufferedImage image = null;
+    private String imagePath = "picture/2.jpg";
+    private int n;
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    public GameJframe(int n) {
+        this.n=n;
+        inum = new int[n][n]; // 初始化inum数组
+        icons = new ImageIcon[n][n];
 
         // 加载图片
-        String imagePath = "picture/2.jpg";
-        BufferedImage image = null;
         try {
             image = ImageIO.read(new File(imagePath));
         } catch (IOException e) {
@@ -28,34 +33,112 @@ public class GameJframe {
             return; // 退出程序或适当地处理错误
         }
 
-        int width = image.getWidth();
-        int height = image.getHeight();
-        int Wwidth=frame.getWidth();
-        int Wheight=frame.getHeight();
-        // 创建一个ImageIcon数组，包含3x3个ImageIcon
-        ImageIcon[][] icons = new ImageIcon[3][3];
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                BufferedImage iconImage = image.getSubimage(i * image.getWidth() / 3, j * image.getHeight() / 3,
-                        image.getWidth() / 3, image.getHeight() / 3);
-                ImageIcon icon = new ImageIcon(iconImage);
-                icons[i][j] = icon;
+        initializeGame();
+    }
+
+    private void initializeGame() {
+        // 如果需要，在这里创建并显示另一个窗口
+        SwingUtilities.invokeLater(() -> {
+            // 创建并显示新的GameJframe实例
+            game();
+        });
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private void icpicture(){
+        // 计算每个小图片的尺寸
+        int width = image.getWidth() / n;
+        int height = image.getHeight() / n;
+
+        // 切割图片并存储到icons数组中
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                icons[i][j] = new ImageIcon(image.getSubimage(j * width, i * height, width, height));
+                JLabel label = new JLabel(new ImageIcon(image));
             }
         }
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private void game() {
+        JFrame frame = new JFrame("Image Splitter");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
 
+        // 获取屏幕尺寸
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        Rectangle screenSize = ge.getMaximumWindowBounds();
 
+        // 设置窗口初始大小
+        frame.setSize(screenSize.width / 2, screenSize.height / 2);
+        frame.setVisible(true);
 
-        // 设置一个面板来包含所有的ImageIcon
-        JPanel panel = new JPanel(new GridLayout(3, 3));
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                JLabel label = new JLabel(icons[j][i]);
-                panel.add(label);
+        // 使用JLabel显示图片
+        JLabel label = new JLabel(new ImageIcon(image));
+        frame.add(label, BorderLayout.CENTER);
+
+        // 添加ComponentListener监听器，以监听窗口大小变化
+        BufferedImage finalImage = image;
+        frame.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                // 获取当前窗口大小
+                Dimension size = frame.getSize();
+                // 在后台线程中缩放图像
+                new ImageScaler(label, finalImage, size).execute();
             }
-        }
+        });
 
-        frame.add(panel, BorderLayout.CENTER);
-        frame.pack();
+        // 初始化时调整图片大小
+        new ImageScaler(label, image, frame.getSize()).execute();
+
         frame.setVisible(true);
     }
+
+    // SwingWorker用于异步缩放图像
+    class ImageScaler extends SwingWorker<ImageIcon, Void> {
+        private JLabel label;
+        private BufferedImage image;
+        private Dimension size;
+
+        public ImageScaler(JLabel label, BufferedImage image, Dimension size) {
+            this.label = label;
+            this.image = image;
+            this.size = size;
+        }
+
+        @Override
+        protected ImageIcon doInBackground() throws Exception {
+            // 计算等比例缩放的大小
+            double scaleFactorWidth = (double) size.width / image.getWidth();
+            double scaleFactorHeight = (double) size.height / image.getHeight();
+            double scaleFactor = Math.min(scaleFactorWidth, scaleFactorHeight);
+
+            // 根据宽高比例选择合适的缩放因子
+            if (scaleFactorWidth > scaleFactorHeight) {
+                // 高度过窄，以高为标准
+                scaleFactor = scaleFactorHeight;
+            } else {
+                // 宽度过窄，以宽为标准
+                scaleFactor = scaleFactorWidth;
+            }
+
+            int newWidth = (int) (image.getWidth() * scaleFactor);
+            int newHeight = (int) (image.getHeight() * scaleFactor);
+
+            // 在后台线程中缩放图像
+            return new ImageIcon(image.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH));
+        }
+
+        @Override
+        protected void done() {
+            try {
+                // 更新UI
+                label.setIcon(get());
+                label.setHorizontalAlignment(JLabel.CENTER);
+                label.setVerticalAlignment(JLabel.CENTER);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
