@@ -12,13 +12,14 @@ public class GameJframe {
     private int[][] inum; // 声明二维数组
     private ImageIcon[][] icons; // 初始化icons数组
     private BufferedImage image = null;
-    private String imagePath = "picture/2.jpg";
+    private String imagePath = "picture/b.jpg";
     private int n;
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public GameJframe(int n) {
+    public GameJframe(String pname,int n) {
         this.n=n;
         inum = new int[n][n]; // 初始化inum数组
         icons = new ImageIcon[n][n];
+        imagePath = "picture/"+pname+".jpg";
 
         // 加载图片
         try {
@@ -33,6 +34,12 @@ public class GameJframe {
             return; // 退出程序或适当地处理错误
         }
 
+        try {
+            icpicture(image,n);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         initializeGame();
     }
 
@@ -42,18 +49,41 @@ public class GameJframe {
             // 创建并显示新的GameJframe实例
             game();
         });
+
     }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private void icpicture(){
+
+///////////图片切割并保存////////////////////////////////////////////////////////////////////////////
+
+    // 假设image是一个BufferedImage对象，n是要切割的块数，imageName是原始图片的文件名（不含路径）
+    private void icpicture(BufferedImage image, int n) throws IOException {
+        File imageFile = new File(imagePath);
+        String imageName=imageFile.getName();
         // 计算每个小图片的尺寸
         int width = image.getWidth() / n;
         int height = image.getHeight() / n;
 
-        // 切割图片并存储到icons数组中
+        // 创建output_images文件夹来存放小图片的文件夹
+        File outputImagesFolder = new File("output_images");
+        if (!outputImagesFolder.exists()) {
+            outputImagesFolder.mkdirs();
+        }
+
+        // 创建与原始图片同名的文件夹
+        String imageNameWithoutExtension = imageName.substring(0, imageName.lastIndexOf('.'));
+        File outputFolder = new File(outputImagesFolder, imageNameWithoutExtension+"_"+n);
+        if (!outputFolder.exists()) {
+            outputFolder.mkdirs();
+        }
+
+        // 切割图片并保存到文件夹中
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                icons[i][j] = new ImageIcon(image.getSubimage(j * width, i * height, width, height));
-                JLabel label = new JLabel(new ImageIcon(image));
+                // 获取子图像
+                BufferedImage subImage = image.getSubimage(j * width, i * height, width, height);
+
+                // 创建文件名并保存图像
+                File outputFile = new File(outputFolder, "image_" + i + "_" + j + ".jpg");
+                ImageIO.write(subImage, "jpg", outputFile);
             }
         }
     }

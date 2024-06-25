@@ -18,7 +18,7 @@ public class PuzzleGame extends JFrame{
     JMenuItem relogin = new JMenuItem("重新登陆");
 
 
-    public void GameFrame() {
+    public void PuzzleGame() {
             initJFrame();
             initJMenuBar();
             initData();
@@ -38,7 +38,7 @@ public class PuzzleGame extends JFrame{
     private void initImage(){
         this.getContentPane().removeAll();
         if(victory()){
-            JLabel winJLabel = new JLabel(new ImageIcon("images/win.png"));
+            JLabel winJLabel = new JLabel(new ImageIcon("picture/win.jpg"));
             winJLabel.setBounds(203,283,197,73);
             this.getContentPane().add(winJLabel);
         }
@@ -48,13 +48,13 @@ public class PuzzleGame extends JFrame{
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
                 int num=data[i][j];
-                JLabel jLabel = new JLabel(new ImageIcon("images/"+num+".png"));
+                JLabel jLabel = new JLabel(new ImageIcon("picture/"+num+".png"));
                 jLabel.setBounds(105*j+90,105*i+130,105,105);
                 jLabel.setBorder(new BevelBorder(BevelBorder.LOWERED));
                 this.getContentPane().add(jLabel);
             }
         }
-        JLabel backgroung = new JLabel(new ImageIcon("images/back.png"));
+        JLabel backgroung = new JLabel(new ImageIcon("picture/back.png"));
         backgroung.setBounds(50,40,508,560);
         this.getContentPane().add(backgroung);
         this.getContentPane().repaint();

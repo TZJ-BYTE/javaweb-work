@@ -2,20 +2,26 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.DataInput;
+import java.sql.*;
 
 public class Window {
     private boolean pass=true;
     private int height=500;
     private int width=800;
+    //数据库连接字符串
+    private String url = "jdbc:mysql://vlab.tute.edu.cn:7186/db0304230217?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
+    // 数据库用户名
+    private String user = "0304230217";
+    // 数据库密码
+    private String password = "0304230217";
 
     public Window(){
+
         setPass(true);
-        this.run();
+
+        run();
+
         while (this.getPass()){
             try {
                 Thread.sleep(0);
@@ -33,12 +39,7 @@ public class Window {
     }
 
     public void run() {
-        //数据库连接字符串
-        String url = "jdbc:mysql://localhost:3306/mydata?useSSL=false";
-        // 数据库用户名
-        String user = "root";
-        // 数据库密码
-        String password = "20050528";
+
 
 
         // 加载并注册JDBC驱动
@@ -111,36 +112,42 @@ public class Window {
         mainFrame.setVisible(true); // 将窗口设置为可视[在添加完所有组件之后运行]
     }
 
-    private void add(String url, String user, String password, String username, char[] userpassword) {
+    private boolean add(String url, String user, String password, String username, char[] userpassword) {
         String userpass = new String(userpassword);
 
 
         // 创建数据库连接
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
-            // 创建Statement对象
-            try (Statement statement = connection.createStatement()) {
-                // 执行SQL插入语句
-                // 根据用户名查询用户
-                ResultSet resultSet = statement.executeQuery("SELECT * FROM users WHERE name = '" + username + "'");
+            // 使用占位符来避免SQL注入
+            String checkSql = "SELECT * FROM users WHERE name = ?";
+            try (PreparedStatement checkStmt = connection.prepareStatement(checkSql)) {
+                checkStmt.setString(1, username);
+                ResultSet resultSet = checkStmt.executeQuery();
                 if (resultSet.next()) {
                     System.out.println("用户名已存在！");
-                }else{
-                    // 用户名不存在，可以插入新记录
-                    String sql = "INSERT INTO users (name, password) VALUES ('" + username + "', '" + userpass + "')";
-                    int rowsAffected = statement.executeUpdate(sql);
-
-                    if (rowsAffected > 0) {
-                        System.out.println("数据插入成功！");
-                    } else {
-                        System.out.println("数据插入失败！");
-                    }
+                    return false;
                 }
+            }
 
-            } catch (SQLException e) {
-                e.printStackTrace();
+            // 用户名不存在，可以插入新记录
+            String insertSql = "INSERT INTO users (name, password) VALUES (?, ?)";
+            try (PreparedStatement insertStmt = connection.prepareStatement(insertSql)) {
+                insertStmt.setString(1, username);
+                insertStmt.setString(2, userpass);
+                int rowsAffected = insertStmt.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("数据插入成功！");
+                    return true;
+                } else {
+                    System.out.println("数据插入失败！");
+                    return false;
+                }
             }
         } catch (SQLException e) {
+            // 更好的异常处理，例如记录日志
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -214,6 +221,7 @@ public class Window {
         JButton button1 = new JButton("注册");
         button1.setBounds(250, 200, 100, 30); // 设置按钮的位置和大小
         dialog.add(button1); // 将按钮添加到内容面板
+
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -221,7 +229,9 @@ public class Window {
                 String repassword = new String(passwordField2.getPassword());
 
                 if (!textField1.getText().isEmpty()&&!fpassword.isEmpty() && !repassword.isEmpty() && fpassword.equals(repassword)) {
-                    add(url, user, password, textField1.getText(), passwordField1.getPassword());
+                    if(add(url, user, password, textField1.getText(), passwordField1.getPassword())){
+                        dialog.dispose();
+                    }
                 } else if (textField1.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(dialog, "账号输入不能为空");
                 } else if (fpassword.isEmpty() || repassword.isEmpty()) {
