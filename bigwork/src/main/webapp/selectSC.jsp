@@ -1,156 +1,191 @@
-<%@ page language="java" pageEncoding="GBK"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" import="com.demo.*"%>
-<html>
-	<head>
-		<%
-			List<Shoppingcart> lsc = (List<Shoppingcart>) session
-					.getAttribute("Shoppingcart");
-			Userinfo u = (Userinfo) session.getAttribute("userinfo");
-			Integer currentPage = 0;
-			if (request.getParameter("page") == null) {
-				currentPage = 1;
-			} else {
-				currentPage = Integer.parseInt(request.getParameter("page"));
-			}
-			Integer allPage = 0;
-			if (lsc.size() % 10 == 0 && lsc.size() != 0)
-				allPage = lsc.size() / 10;
-			else
-				allPage = lsc.size() / 10 + 1;
-			Integer start = (currentPage - 1) * 10;
-			Integer end = 0;
-			if (lsc.size() - start < 10) {
-				end = (currentPage - 1) * 10 + lsc.size() - start;
-			} else {
-				end = (currentPage - 1) * 10 + 10;
-			}
-		%>
-		<title>ÎÒµÄ¹ºÎï³µ</title>
-		<script type="text/javascript">
-			function numAbove(temp){
-				var numStr = /^[1-9]+([0-9]){0,3}$/;
-				if(!numStr.test(temp.value)){
-					alert('ÉÌÆ·ÊıÁ¿±ØĞëÎªĞ¡ÓÚ10000µÄÕıÕûÊı£¡');
-					temp.focus();
-					document.getElementById("submit").disabled=true;
-					return false;
-				}
-				else{
-					document.getElementById("submit").disabled=false;
-				}
-			}
-		
-		</script>
-		<style type="text/css">
-<!--
-.STYLE1 {
-	font-size: 12px
-}
--->
-</style>
-	</head>
-<link type="text/css" rel="stylesheet" href="CSS/style.css">
-	<body>
-		<h1 align="center">Õı³¬µç×ÓÉÌ³Ç</h1>
-	<h2 align="center">ÎÒµÄ¹ºÎï³µ</h2>
-	
-		<div align="center">
-			<table>
-				<tr>
-					<td width="608">
-						<span class="STYLE1"> ÄúºÃ£¬<%=u.getRealname()%>£¬ <%
-							if (lsc.size() == 0) {
-						%> ÄúÉĞÎ´¹ºÂòÈÎºÎÉÌÆ·£¬¡¾ <a href="goods.do?flag=0">µã»÷ÕâÀï½øĞĞ¹ºÎï</a>¡¿ <%
-							} else {
-						%> ÄúµÄ¹ºÎï³µÖĞÉÌÆ·ÈçÏÂ£º </span>
-				  </td>
-					<td width="51">
-						<a href="user.do?flag=2" class="STYLE1">ÍË³öµÇÂ¼</a>					</td>
-				</tr>
-			</table>
-		</div>
-		<form action="cart.do?flag=1" method="post">
-			<div align="center">
-				<table width="600" border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#CCCCCC">
-					<tr>
-						<td height="25">
-							ÉÌÆ·Ãû³Æ						</td>
-						<td>
-							¼Û¸ñ
-						</td>
-						<td>
-							ÊıÁ¿
-						</td>
-						<td>
-							¼Û¸ñĞ¡¼Æ
-						</td>
-					</tr>
-					<%
-						for (int i = start; i < end; i++) {
-								Shoppingcart sc = lsc.get(i);
-					%>
-					<tr>
-						<td height="25" bgcolor="#FFFFFF">
-							<%=sc.getGoodsName()%>					  </td>
-						<td bgcolor="#FFFFFF">
-							<%=sc.getPrice()%>					  </td>
-						<td bgcolor="#FFFFFF">
-							<%=sc.getNumber()%>					  </td>
-						<td bgcolor="#FFFFFF">
-							<%=sc.getNumber() * sc.getPrice()%>					  </td>
-						<td bgcolor="#FFFFFF">
-							<a href="cart.do?flag=3&id=<%=sc.getId()%>">É¾³ıÉÌÆ·</a>						</td>
-					</tr>
-					<%
-						}
-					%>
-			  </table>
-				<table width="600" bgcolor="#999999">
-					<tr>
-						<td width="189">
-							<%
-								float allCost = 0;
-									for (Shoppingcart sc : lsc) {
-										allCost += sc.getNumber() * sc.getPrice();
-									}
-							%>
-							Ïû·Ñ×Ü½ğ¶î£º<%=allCost%>
-						</td>
-						<td width="50">
-							<a href="account.do?flag=0">½áÕË</a>
-						</td>
-						<td width="132">
-							<a href="goods.do?flag=0">·µ»Ø¼ÌĞø¹ºÎï</a>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				<div align="center">
-					<ul>
-						<span class="STYLE1"><a href="selectSC.jsp?page=1">Ê×Ò³</a> <%
- 	for (int i = 1; i <= allPage; i++) {
- 			if (i == currentPage) {
- %><%=i%> <%
- 	} else {
- %> <a href="selectSC.jsp?page=<%=i%>"><%=i%></a> <%
- 	}
- 		}
- %> <a href="selectSC.jsp?page=<%=allPage%>">Î²Ò³</a> </span>
-						<li class="STYLE1">
-							µÚ<%=currentPage%>Ò³
-						</li>
-						<li class="STYLE1">
-							¹²<%=allPage%>Ò³
-						</li>
-					</ul>
-				</div>
-			</div>
-		</form>
-		<div align="center">
-			<span class="STYLE1"> <%
- 	}
- %> </span>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>æˆ‘çš„è´­ç‰©è½¦</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .product-item:last-child {
+            border-bottom: none;
+        }
+        .product-details {
+            display: flex;
+            align-items: center;
+        }
+        .product-name {
+            margin-right: 20px;
+        }
+        .product-price {
+            margin-right: 20px;
+        }
+        .product-quantity {
+            margin-right: 20px;
+        }
+        .product-subtotal {
+            margin-right: 20px;
+        }
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pagination a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #333;
+        }
+        .pagination a.active {
+            font-weight: bold;
+        }
+        .total-cost {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .actions {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .actions a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        /* å•†å“èƒŒæ™¯é¢œè‰² */
+        .bg-color-1 { background-color: #f9f9f9; }
+        .bg-color-2 { background-color: #e9ecef; }
+        .bg-color-3 { background-color: #dee2e6; }
+        .bg-color-4 { background-color: #ced4da; }
+        .bg-color-5 { background-color: #adb5bd; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>èµ›åšå¦ç¾é£Ÿåº—</h1>
+    <h2>æˆ‘çš„è´­ç‰©è½¦</h2>
+</header>
+<div class="container">
+    <%
+        List<Shoppingcart> lsc = (List<Shoppingcart>) session.getAttribute("Shoppingcart");
+        Userinfo u = (Userinfo) session.getAttribute("userinfo");
+        Integer currentPage = 0;
+        if (request.getParameter("page") == null) {
+            currentPage = 1;
+        } else {
+            currentPage = Integer.parseInt(request.getParameter("page"));
+        }
+        Integer allPage = 0;
+        if (lsc.size() % 10 == 0 && lsc.size() != 0)
+            allPage = lsc.size() / 10;
+        else
+            allPage = lsc.size() / 10 + 1;
+        Integer start = (currentPage - 1) * 10;
+        Integer end = 0;
+        if (lsc.size() - start < 10) {
+            end = (currentPage - 1) * 10 + lsc.size() - start;
+        } else {
+            end = (currentPage - 1) * 10 + 10;
+        }
+    %>
+    <p>æ‚¨å¥½ï¼Œ<%=u.getRealname()%>ï¼Œ
+        <%
+            if (lsc.size() == 0) {
+        %>
+        æ‚¨å°šæœªè´­ä¹°ä»»ä½•å•†å“ï¼Œã€<a href="goods.do?flag=0">ç‚¹å‡»è¿™é‡Œè¿›è¡Œè´­ç‰©</a>ã€‘
+        <%
+        } else {
+        %>
+        æ‚¨çš„è´­ç‰©è½¦ä¸­å•†å“å¦‚ä¸‹ï¼š
+        <%
+            }
+        %>
+    </p>
+    <a href="user.do?flag=2">é€€å‡ºç™»å½•</a>
+    <form action="cart.do?flag=4" method="post">
+        <ul class="product-list">
+            <%
+                String[] colors = {"bg-color-1", "bg-color-2", "bg-color-3", "bg-color-4", "bg-color-5"};
+                for (int i = start; i < end; i++) {
+                    Shoppingcart sc = lsc.get(i);
+                    String colorClass = colors[(i - start) % colors.length];
+            %>
+            <li class="product-item <%=colorClass%>">
+                <div class="product-details">
+                    <span class="product-name"><%=sc.getGoodsName()%></span>
+                    <span class="product-price">ä»·æ ¼ï¼š<%=sc.getPrice()%></span>
+                    <span class="product-quantity">æ•°é‡ï¼š<%=sc.getNumber()%></span>
+                    <span class="product-subtotal">å°è®¡ï¼š<%=sc.getNumber() * sc.getPrice()%></span>
+                </div>
+                <a href="cart.do?flag=3&id=<%=sc.getId()%>">åˆ é™¤å•†å“</a>
+            </li>
+            <%
+                }
+            %>
+        </ul>
+        <div class="total-cost">
+            <%
+                float allCost = 0;
+                for (Shoppingcart sc : lsc) {
+                    allCost += sc.getNumber() * sc.getPrice();
+                }
+            %>
+            æ¶ˆè´¹æ€»é‡‘é¢ï¼š<%=allCost%>
+        </div>
+        <div class="actions">
+            <form action="checkout" method="post">
+                <button type="submit">ç»“è´¦</button>
+            </form>
+            <a href="goods.do?flag=0">è¿”å›ç»§ç»­è´­ç‰©</a>
+        </div>
+    </form>
+    <div class="pagination">
+        <a href="selectSC.jsp?page=1">é¦–é¡µ</a>
+        <%
+            for (int i = 1; i <= allPage; i++) {
+                if (i == currentPage) {
+        %>
+        <%=i%>
+        <%
+        } else {
+        %>
+        <a href="selectSC.jsp?page=<%=i%>"><%=i%></a>
+        <%
+                }
+            }
+        %>
+        <a href="selectSC.jsp?page=<%=allPage%>">å°¾é¡µ</a>
+        <span>ç¬¬<%=currentPage%>é¡µ</span>
+        <span>å…±<%=allPage%>é¡µ</span>
+    </div>
+</div>
+</body>
 </html>

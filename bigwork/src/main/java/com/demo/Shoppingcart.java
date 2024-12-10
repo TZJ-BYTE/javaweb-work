@@ -2,8 +2,9 @@ package com.demo;
 
 import java.io.Serializable;
 
-public class Shoppingcart implements Serializable{
-	
+public class
+Shoppingcart implements Serializable{
+
 	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String goodsName;

@@ -20,13 +20,14 @@
         padding: 0;
     }
     .bg {
-        position: absolute;
+        position: fixed; /* 固定背景图片 */
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-image: url('images/bg.jpg'); /* 背景图片 */
         background-size: cover;
+        background-attachment: fixed; /* 固定背景图片 */
         opacity: 0.8;
         z-index: -1;
     }
@@ -49,15 +50,29 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
     .header a {
         color: #007bff;
         text-decoration: none;
         font-size: 14px;
+        margin-right: 10px; /* 添加间距 */
     }
     .header a:hover {
         text-decoration: underline;
+    }
+    .header button {
+        background-color: #007bff; /* 设置按钮的背景色 */
+        color: #fff; /* 设置按钮的文字颜色 */
+        border: none; /* 移除按钮的边框 */
+        padding: 5px 10px; /* 设置按钮的内边距 */
+        margin-left: 10px; /* 添加间距 */
+        border-radius: 5px; /* 设置按钮的圆角 */
+        transition: background-color 0.3s; /* 平滑过渡效果 */
+        font-size: 12px; /* 减小字体大小 */
+    }
+    .header button:hover {
+        background-color: #0056b3; /* 鼠标悬停时的颜色 */
     }
     .product-list {
         display: grid;
@@ -78,28 +93,19 @@
     .product-item a:hover {
         text-decoration: underline;
     }
-    .pagination {
-        display: flex;
-        justify-content: space-around; /* 分散对齐项目 */
-        align-items: center; /* 垂直居中项目 */
-        margin-top: 20px;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 100px;
-        background-color: #333; /* 添加背景色 */
-        padding: 10px; /* 添加内边距 */
-        border-radius: 10px 0 0 10px; /* 添加圆角 */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
-    }
+
     .pagination button {
-        background-color: #333; /* 设置按钮的背景色 */
+        background-color: #007bff; /* 设置按钮的背景色 */
         color: #fff; /* 设置按钮的文字颜色 */
         border: none; /* 移除按钮的边框 */
         padding: 5px 10px; /* 设置按钮的内边距 */
         margin: 0 2px; /* 设置按钮的外边距 */
         border-radius: 5px; /* 设置按钮的圆角 */
         transition: background-color 0.3s; /* 平滑过渡效果 */
+    }
+
+    .pagination button:hover {
+        background-color: #0056b3; /* 鼠标悬停时的颜色 */
     }
 
     .pagination a, .pagination span {
@@ -119,6 +125,34 @@
         background-color: #007bff;
         color: #fff;
     }
+
+    .pagination .refresh-button {
+        background-color: #007bff; /* 设置按钮的背景色 */
+        color: #fff; /* 设置按钮的文字颜色 */
+        border: none; /* 移除按钮的边框 */
+        padding: 5px 10px; /* 设置按钮的内边距 */
+        margin: 0 5px; /* 设置按钮的外边距 */
+        border-radius: 5px; /* 设置按钮的圆角 */
+        transition: background-color 0.3s; /* 平滑过渡效果 */
+        font-size: 12px; /* 减小字体大小 */
+    }
+    .pagination .refresh-button:hover {
+        background-color: #0056b3; /* 鼠标悬停时的颜色 */
+    }
+
+    .btn {
+        background-color: #007bff; /* 设置按钮的背景色 */
+        color: #fff; /* 设置按钮的文字颜色 */
+        border: none; /* 移除按钮的边框 */
+        padding: 5px 10px; /* 设置按钮的内边距 */
+        border-radius: 5px; /* 设置按钮的圆角 */
+        transition: background-color 0.3s; /* 平滑过渡效果 */
+        font-size: 12px; /* 减小字体大小 */
+        cursor: pointer; /* 添加鼠标指针样式 */
+    }
+    .btn:hover {
+        background-color: #0056b3; /* 鼠标悬停时的颜色 */
+    }
 </style>
 <script>
     function nextPage() {
@@ -130,6 +164,27 @@
             currentPage = 1;
         }
         window.location.href = "goods.do?flag=0&start=" + currentPage;
+    }
+
+    // 添加 refreshPage 函数
+    function refreshPage() {
+        window.location.href = "goods.do?flag=0"; // 重新加载页面并调用 findAll 方法
+    }
+
+    // 添加 addToCart 函数
+    function addToCart(goodsId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "cart.do?flag=0&id=" + goodsId, true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                alert(response.message); // 显示添加成功的消息
+            }
+        };
+
+        xhr.send();
     }
 </script>
 
@@ -143,33 +198,29 @@
                 <span>你好, <%=u.getRealname()%>。</span>
             </div>
             <div>
-                <a href="selectSC.jsp">查看购物车</a>
+                <button class="btn" onclick="location.href='selectSC.jsp'">查看购物车</button>
+                <button onclick="refreshPage()" class="refresh-button">刷新</button>
             </div>
         </div>
-     <div class="product-list">
-    <%
-        for (Goods g : l) {
-    %>
-    <div class="product-item">
-        <p><%=g.getGoodsname()%></p>
-        <p>价格: <%=g.getPrice()%></p>
-        <p>生产厂家: <%=g.getFactory()%></p>
-        <p>出产日期: <%=g.getOutdate()%></p>
-        <p>商品介绍: <%=g.getIntroduction()%></p>
-        <!-- 添加到购物车表单 -->
-        <form action="cart.do?flag=0&id=<%=g.getId()%>" method="post">
-            <input type="submit" value="添加到购物车" />
-        </form>
-    </div>
-    <%
-        }
-    %>
-</div>
+        <div class="product-list">
+            <%
+                for (Goods g : (List<Goods>) request.getAttribute("findAllGoods")) {
+            %>
+            <div class="product-item">
+                <p><%=g.getGoodsname()%></p>
+                <p>价格: <%=g.getPrice()%></p>
+                <p>口味: <%=g.getTaste()%></p>
+                <p>饮食习惯: <%=g.getDietHabit()%></p>
+                <p>健康要求: <%=g.getHealthRequirement()%></p>
+                <!-- 购买按钮 -->
+                <form onsubmit="event.preventDefault(); addToCart(<%=g.getId()%>);">
+                    <input type="submit" value="购买" class="btn" />
+                </form>
+            </div>
 
-        <div class="pagination">
-            <input type="hidden" id="currentPage" value="<%=pl.getCurrentPage()%>">
-            <input type="hidden" id="maxPage" value="<%=pl.getMaxPage()%>">
-            <button onclick="nextPage()">刷新</button>
+            <%
+                }
+            %>
         </div>
     </div>
 </body>

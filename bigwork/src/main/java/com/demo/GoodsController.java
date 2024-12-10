@@ -39,17 +39,13 @@ public class GoodsController extends HttpServlet {
 
 	public void findAll(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			Integer curPage = 0;
-			Integer rowPerPage = 10;
-			if (request.getParameter("start") == null) {
-				curPage = 1;
-			} else {
-				curPage = Integer.parseInt(request.getParameter("start"));
-			}
-			PageList pl = new PageList("goods", curPage, rowPerPage);
+			int randomCount = 10; // 假设你想随机选取5个商品
+			List<Goods> randomGoods = gd.findRandom(randomCount);
 
-			request.setAttribute("page", pl);
-			request.setAttribute("findAllGoods", gd.findAllPage(pl.getCurrentCount(), pl.getRowsPerPage()));
+			// 将随机商品列表设置到请求属性中
+			request.setAttribute("findAllGoods", randomGoods);
+
+			// 转发到 homepage.jsp
 			RequestDispatcher rd = request.getRequestDispatcher("homepage.jsp");
 			rd.forward(request, response);
 		} catch (Exception e) {
