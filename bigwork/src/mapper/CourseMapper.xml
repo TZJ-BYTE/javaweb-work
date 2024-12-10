@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.demo.dao.CourseMapper">
+
+    <resultMap id="BaseResultMap" type="com.demo.vo.Course" >
+            <result column="id" property="id" />
+            <result column="course_name" property="courseName" />
+            <result column="course_time" property="courseTime" />
+            <result column="course_room" property="courseRoom" />
+            <result column="course_week" property="courseWeek" />
+            <result column="course_college" property="courseCollege" />
+            <result column="course_score" property="courseScore" />
+            <result column="course_text" property="courseText" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        `id`,`course_name`,`course_time`,`course_room`,`course_week`,`course_college`,`course_score`,`course_text`
+    </sql>
+
+    <!--新增-->
+    <insert id="doCreate" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.demo.vo.Course">
+        INSERT INTO `t_course`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                    <if test ='id != null'>`id`,</if>
+                    <if test ='courseName != null'>`course_name`,</if>
+                    <if test ='courseTime != null'>`course_time`,</if>
+                    <if test ='courseRoom != null'>`course_room`,</if>
+                    <if test ='courseWeek != null'>`course_week`,</if>
+                    <if test ='courseCollege != null'>`course_college`,</if>
+                    <if test ='courseScore != null'>`course_score`,</if>
+                    <if test ='courseText != null'>`course_text`</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                    <if test ='id != null'>#{id},</if>
+                    <if test ='courseName != null'>#{courseName},</if>
+                    <if test ='courseTime != null'>#{courseTime},</if>
+                    <if test ='courseRoom != null'>#{courseRoom},</if>
+                    <if test ='courseWeek != null'>#{courseWeek},</if>
+                    <if test ='courseCollege != null'>#{courseCollege},</if>
+                    <if test ='courseScore != null'>#{courseScore},</if>
+                    <if test ='courseText != null'>#{courseText}</if>
+        </trim>
+    </insert>
+
+    <!--批量删除-->
+    <delete id="doRemoveBatch" parameterType="java.util.Collection">
+        DELETE FROM `t_course` WHERE `id` IN
+        <foreach collection="list" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!--修改-->
+    <update id="doUpdate" parameterType="com.demo.vo.Course">
+        UPDATE `t_course`
+        <set>
+                <if test ='id != null'>`id` = #{id},</if>
+                <if test ='courseName != null'>`course_name` = #{courseName},</if>
+                <if test ='courseTime != null'>`course_time` = #{courseTime},</if>
+                <if test ='courseRoom != null'>`course_room` = #{courseRoom},</if>
+                <if test ='courseWeek != null'>`course_week` = #{courseWeek},</if>
+                <if test ='courseCollege != null'>`course_college` = #{courseCollege},</if>
+                <if test ='courseScore != null'>`course_score` = #{courseScore},</if>
+                <if test ='courseText != null'>`course_text` = #{courseText}</if>
+        </set>
+        WHERE `id` = #{id}
+    </update>
+
+    <!--获取-->
+    <select id="findById" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" /> FROM `t_course` WHERE `id` = #{id}
+    </select>
+
+    <!--列表-->
+    <select id="findAllSplit" parameterType="java.util.Map" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" /> FROM `t_course`
+        <where>
+            <if test="searchColumn != null and searchColumn != '' and keyword != null and keyword != ''">
+                ${searchColumn} LIKE CONCAT('%',#{keyword},'%')  AND
+            </if>
+            1=1
+        </where>
+        ORDER BY id ASC
+        <if test="startIndex != null and pageSize != null">
+            LIMIT #{startIndex},#{pageSize};
+        </if>
+    </select>
+    <!--数量-->
+    <select id="getAllCount" parameterType="java.util.Map" resultType="Integer">
+        SELECT COUNT(*) FROM `t_course`
+        <where>
+            <if test="searchColumn != null and searchColumn != '' and keyword != null and keyword != ''">
+                ${searchColumn} LIKE CONCAT('%',#{keyword},'%')  AND
+            </if>
+            1=1
+        </where>
+    </select>
+</mapper>

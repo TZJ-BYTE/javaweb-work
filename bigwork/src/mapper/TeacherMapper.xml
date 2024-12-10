@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.demo.dao.TeacherMapper">
+
+    <resultMap id="BaseResultMap" type="com.demo.vo.Teacher" >
+            <result column="id" property="id" />
+            <result column="teacher_name" property="teacherName" />
+            <result column="teacher_sex" property="teacherSex" />
+            <result column="teacher_degree" property="teacherDegree" />
+            <result column="teacher_potition" property="teacherPotition" />
+            <result column="teacher_college" property="teacherCollege" />
+            <result column="teacher_phone" property="teacherPhone" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        `id`,`teacher_name`,`teacher_sex`,`teacher_degree`,`teacher_potition`,`teacher_college`,`teacher_phone`
+    </sql>
+
+    <!--新增-->
+    <insert id="doCreate" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.demo.vo.Teacher">
+        INSERT INTO `t_teacher`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                    <if test ='id != null'>`id`,</if>
+                    <if test ='teacherName != null'>`teacher_name`,</if>
+                    <if test ='teacherSex != null'>`teacher_sex`,</if>
+                    <if test ='teacherDegree != null'>`teacher_degree`,</if>
+                    <if test ='teacherPotition != null'>`teacher_potition`,</if>
+                    <if test ='teacherCollege != null'>`teacher_college`,</if>
+                    <if test ='teacherPhone != null'>`teacher_phone`</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                    <if test ='id != null'>#{id},</if>
+                    <if test ='teacherName != null'>#{teacherName},</if>
+                    <if test ='teacherSex != null'>#{teacherSex},</if>
+                    <if test ='teacherDegree != null'>#{teacherDegree},</if>
+                    <if test ='teacherPotition != null'>#{teacherPotition},</if>
+                    <if test ='teacherCollege != null'>#{teacherCollege},</if>
+                    <if test ='teacherPhone != null'>#{teacherPhone}</if>
+        </trim>
+    </insert>
+
+    <!--批量删除-->
+    <delete id="doRemoveBatch" parameterType="java.util.Collection">
+        DELETE FROM `t_teacher` WHERE `id` IN
+        <foreach collection="list" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!--修改-->
+    <update id="doUpdate" parameterType="com.demo.vo.Teacher">
+        UPDATE `t_teacher`
+        <set>
+                <if test ='id != null'>`id` = #{id},</if>
+                <if test ='teacherName != null'>`teacher_name` = #{teacherName},</if>
+                <if test ='teacherSex != null'>`teacher_sex` = #{teacherSex},</if>
+                <if test ='teacherDegree != null'>`teacher_degree` = #{teacherDegree},</if>
+                <if test ='teacherPotition != null'>`teacher_potition` = #{teacherPotition},</if>
+                <if test ='teacherCollege != null'>`teacher_college` = #{teacherCollege},</if>
+                <if test ='teacherPhone != null'>`teacher_phone` = #{teacherPhone}</if>
+        </set>
+        WHERE `id` = #{id}
+    </update>
+
+    <!--获取-->
+    <select id="findById" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" /> FROM `t_teacher` WHERE `id` = #{id}
+    </select>
+
+    <!--列表-->
+    <select id="findAllSplit" parameterType="java.util.Map" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" /> FROM `t_teacher`
+        <where>
+            <if test="searchColumn != null and searchColumn != '' and keyword != null and keyword != ''">
+                ${searchColumn} LIKE CONCAT('%',#{keyword},'%')  AND
+            </if>
+            1=1
+        </where>
+        ORDER BY id ASC
+        <if test="startIndex != null and pageSize != null">
+            LIMIT #{startIndex},#{pageSize};
+        </if>
+    </select>
+    <!--数量-->
+    <select id="getAllCount" parameterType="java.util.Map" resultType="Integer">
+        SELECT COUNT(*) FROM `t_teacher`
+        <where>
+            <if test="searchColumn != null and searchColumn != '' and keyword != null and keyword != ''">
+                ${searchColumn} LIKE CONCAT('%',#{keyword},'%')  AND
+            </if>
+            1=1
+        </where>
+    </select>
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app version="2.5"
+		 xmlns="http://java.sun.com/xml/ns/javaee"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<servlet>
+		<servlet-name>UserinfoController</servlet-name>
+		<servlet-class>
+			sunyang.webtier.UserinfoController
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GoodsController</servlet-name>
+		<servlet-class>sunyang.webtier.GoodsController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CartController</servlet-name>
+		<servlet-class>sunyang.webtier.CartController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>safecode</servlet-name>
+		<servlet-class>sunyang.util.SafeCode</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>account</servlet-name>
+		<servlet-class>sunyang.webtier.AccountController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserinfoController</servlet-name>
+		<url-pattern>/user.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GoodsController</servlet-name>
+		<url-pattern>/goods.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CartController</servlet-name>
+		<url-pattern>/cart.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>safecode</servlet-name>
+		<url-pattern>/safecode</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>account</servlet-name>
+		<url-pattern>/account.do</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>

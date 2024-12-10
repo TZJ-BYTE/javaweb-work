@@ -1,0 +1,269 @@
+:root {
+    --font-size:12px;
+    --color-black: #000000;
+    --color-blue: #034683;
+    --color-bgblue: #1980DB;
+    --color-grey: #333333;
+    --color-light-grey: #dddddd;
+    --color-orange: #FF6600;
+    --color-green: #FEECEA;
+    --color-white: #FFFFFF;
+    --color-deep-grey: #999999;
+    --border-color: #999999;
+    --table-border-color: #D8D8D8;
+    --table-border-color-dark: #004C86;
+    --hr-color: #77642C;
+}
+
+td {
+    font-size: var(--font-size);
+    color: var(--color-black);
+}
+
+img {
+    border: 0;
+}
+
+.img1 {
+    border: 1px solid;
+}
+
+.blue {
+    font-size: var(--font-size);
+    color: var(--color-blue);
+}
+
+.bgcolor {
+    font-size: var(--font-size);
+    color: var(--color-bgblue);
+}
+
+.btn_grey {
+    font-family: "宋体";
+    font-size: var(--font-size);
+    color: var(--color-grey);
+    background-color: #eeeeee;
+    cursor: pointer;
+    padding: 1px;
+    height: 19px;
+    border: 1px solid;
+    border-color: #FFFFFF #666666 #666666 #FFFFFF;
+}
+
+input {
+    font-family: "宋体";
+    font-size: var(--font-size);
+    color: var(--color-grey);
+    border: 1px solid var(--border-color);
+}
+
+.inputinputinput {
+    font-family: "宋体";
+    font-size: var(--font-size);
+    border: 0;
+}
+
+.inputinput {
+    font-family: "宋体";
+    font-size: var(--font-size);
+    background-color: #DFD4A7;
+    border: 1px solid #D1B681;
+}
+
+.word_white {
+    color: var(--color-white);
+}
+
+.word_deepgrey {
+    color: var(--color-deep-grey);
+}
+
+.word_orange {
+    color: var(--color-orange);
+}
+
+.word_green {
+    color: var(--color-green);
+}
+
+.noborder {
+    border: none;
+}
+
+.word_gray {
+    color: var(--color-light-grey);
+}
+
+body {
+    margin: 0;
+}
+
+textarea {
+    font-family: "宋体";
+    font-size: var(--font-size);
+    color: var(--color-grey);
+    border: 1px solid var(--border-color);
+}
+
+.tableBorder {
+    border: 1px solid var(--table-border-color);
+}
+
+.tableBorder_dashed {
+    border: 1px dashed var(--table-border-color);
+}
+
+.tableBorder_l {
+    border: 1px solid var(--table-border-color-dark);
+    border-bottom: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+.tableBorder_r {
+    border: 1px solid var(--table-border-color-dark);
+    border-bottom: 0;
+    border-left: 0;
+    border-top: 0;
+}
+
+.tableBorder_lb {
+    border: 1px solid var(--table-border-color);
+    border-left: 0;
+    border-top: 0;
+}
+
+.tableBorder_l_dashed {
+    border: 1px dashed var(--table-border-color);
+    border-bottom: 0;
+    border-left: 0;
+    border-top: 0;
+}
+
+.tableBorder_T_dashed {
+    border: 1px dashed var(--table-border-color);
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.tableBorder_LTR_dashed {
+    border: 1px dashed var(--table-border-color);
+    border-bottom: 0;
+}
+
+.tableBorder_B_dashed {
+    border: 1px dashed var(--table-border-color);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.hidden_a_line {
+    /* 移除过时的表达式 */
+}
+
+hr {
+    color: var(--hr-color);
+    border-style: dashed;
+}
+
+.backTop:link,
+.backTop:visited,
+.backTop:hover,
+.backTop:active {
+    font-size: 12px;
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.backTop:hover {
+    text-decoration: underline;
+}
+
+.backTop:active {
+    color: var(--color-orange);
+}
+
+a:hover {
+    font-size: var(--font-size);
+    color: var(--color-orange);
+    text-decoration: underline;
+}
+
+a {
+    font-size: var(--font-size);
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+.aaaa:link,
+.aaaa:visited,
+.aaaa:hover,
+.aaaa:active {
+    font-size: 14px;
+    color: var(--color-orange);
+    text-decoration: none;
+}
+
+.aaaa:hover {
+    text-decoration: underline;
+}
+
+.aaaa:active {
+    color: var(--color-orange);
+}
+
+.aaaaa:link,
+.aaaaa:visited,
+.aaaaa:hover,
+.aaaaa:active {
+    font-size: 12px;
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.aaaaa:hover {
+    text-decoration: underline;
+}
+
+.in:link,
+.in:visited,
+.in:hover,
+.in:active {
+    font-size: 12px;
+    color: var(--color-black);
+    text-decoration: none;
+}
+
+.in:hover {
+    text-decoration: underline;
+}
+
+.head-01:link,
+.head-01:visited,
+.head-01:hover,
+.head-01:active {
+    font-size: 14px;
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.head-01:hover,
+.head-01:active {
+    color: var(--color-orange);
+}
+
+.head-02:link,
+.head-02:visited,
+.head-02:hover,
+.head-02:active {
+    font-size: var(--font-size);
+    color: var(--color-orange);
+    text-decoration: none;
+}
+
+.head-02:hover,
+.head-02:active {
+    color: var(--color-black);
+}

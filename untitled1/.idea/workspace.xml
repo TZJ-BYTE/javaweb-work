@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="42f0d81c-c680-4316-a67f-03eecd871373" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../apq/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../apq/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../apq/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../apq/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../apq/src/main/java/org/example/apq/MyLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../apq/src/main/webapp/WEB-INF/lib/shooping-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hxh/tzj.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kechengsheji/kechengsheji.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shooping/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shooping/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shooping/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shooping/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shooping/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shooping/src/main/java/org/example/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tzj - 副本 (3) - 副本/tzj.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tzj - 副本 (3)外/tzj.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tzj - 副本 (4)/tzj.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/shooping-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../大副本/tzj.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../新建文件夹/tzj - 副本 (3)/tzj.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../新建文件夹/大副本/tzj.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../新建文件夹/记录/kechengsheji/kechengsheji.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../新建文件夹/记录/tzj - 副本 (3)/tzj.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../新建文件夹/记录/大副本/tzj.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hxh/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hxh/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hxh/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hxh/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hxh/hxh.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hxh/picture/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hxh/picture/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hxh/picture/m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzj - 副本 (3)/.idea/artifacts/tzj_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzj - 副本 (3)/src/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzj - 副本 (3)/src/Main/resources/output_images/0_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzjmaven/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzjmaven/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzjmaven/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzjmaven/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzjmaven/src/it/settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzjmaven/src/it/simple-it/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzjmaven/src/it/simple-it/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tzjmaven/src/main/java/org/example/MyMojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../新建文件夹/2024javadesign2" beforeDir="false" afterPath="$PROJECT_DIR$/../新建文件夹/2024javadesign2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../新建文件夹/pintu/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../新建文件夹/pintu/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../新建文件夹/pintu/allzip.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../新建文件夹/pintu/music/C418.wav" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2jnEcU94ReJLdHiNy5EFzFT3tYT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/HP/IdeaProjects/untitled1/lib",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/untitled1/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\IdeaProjects\untitled1\lib" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42f0d81c-c680-4316-a67f-03eecd871373" name="Changes" comment="" />
+      <created>1722014519493</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722014519493</updated>
+      <workItem from="1722014520491" duration="80000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
