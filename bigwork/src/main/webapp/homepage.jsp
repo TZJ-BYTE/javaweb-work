@@ -1,5 +1,8 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" import="com.demo.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="service.PageList" %>
+<%@ page import="model.Userinfo" %>
+<%@ page import="model.Goods" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -171,7 +174,7 @@
         window.location.href = "goods.do?flag=0"; // 重新加载页面并调用 findAll 方法
     }
 
-    // 添加 addToCart 函数
+    // addToCart 函数
     function addToCart(goodsId) {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "cart.do?flag=0&id=" + goodsId, true);

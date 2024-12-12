@@ -51,8 +51,7 @@
         您的订单已成功提交！感谢您的购买。
     </div>
     <div class="actions">
-        <a href="goods.do?flag=0">继续购物</a>
-        <a href="user.do?flag=1">查看订单</a>
+        <a href="goods.do">继续购物</a>
     </div>
 </div>
 </body>

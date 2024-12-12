@@ -10,20 +10,20 @@
     <servlet>
         <servlet-name>UserinfoController</servlet-name>
         <servlet-class>
-            com.demo.UserinfoController
+            controller.UserinfoController
         </servlet-class>
     </servlet>
     <servlet>
         <servlet-name>safecode</servlet-name>
-        <servlet-class>com.demo.SafeCode</servlet-class>
+        <servlet-class>service.SafeCode</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>GoodsController</servlet-name>
-        <servlet-class>com.demo.GoodsController</servlet-class>
+        <servlet-class>controller.GoodsController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CartController</servlet-name>
-        <servlet-class>com.demo.CartController</servlet-class>
+        <servlet-class>controller.CartController</servlet-class>
     </servlet>
 
 

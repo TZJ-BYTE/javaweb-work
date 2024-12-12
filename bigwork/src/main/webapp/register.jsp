@@ -112,10 +112,16 @@
         <div class="text-center" style="font-size: 30px;font-weight: 700;">赛博坦美食店</div>
         <a href="login.jsp" style="font-size: 24px;">登录</a>&nbsp;&nbsp;<a style="font-size: 24px;">注册</a>
         <div class="panel-body" style="padding: 30px;">
-            <form action="autoRedirects" method="post" onsubmit="return validateForm()">
+            <form action="user.do?flag=0" method="post" onsubmit="return validateForm()">
                 <div class="form-group">
                     <div class="field field-icon-right">
                         <input type="text" class="input input-big" name="username" id="username" placeholder="用户名" />
+                        <span class="icon icon-user margin-small"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="field field-icon-right">
+                        <input type="text" class="input input-big" name="realname" id="realname" placeholder="真实姓名" />
                         <span class="icon icon-user margin-small"></span>
                     </div>
                 </div>
@@ -147,10 +153,15 @@
 <script type="text/javascript">
     function validateForm() {
         var username = document.getElementById("username").value;
+        var realName = document.getElementById("realName").value;
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("confirmPassword").value;
         if (username == "") {
             alert("用户名不能为空");
+            return false;
+        }
+        if (realName == "") {
+            alert("真实姓名不能为空");
             return false;
         }
         if (password == "") {

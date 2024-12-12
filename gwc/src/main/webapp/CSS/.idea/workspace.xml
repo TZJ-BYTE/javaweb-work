@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f004c78e-dd78-4bda-82b4-272ff221f532" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../../bigwork/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../apq/src/main/java/org/example/apq/MyLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../apq/src/main/java/org/example/apq/MyLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/Chinese.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/service/Chinese.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/DBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/service/DBConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/model/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/GoodsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/service/GoodsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/PageList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/service/PageList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/SafeCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/service/SafeCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/Shoppingcart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/model/Shoppingcart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/Userinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/model/Userinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/UserinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/controller/UserinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/com/demo/UserinfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/java/service/UserinfoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/webapp/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/webapp/homepage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/main/webapp/selectSC.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/main/webapp/selectSC.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/mapper/CourseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/mapper/CourseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/mapper/NoticeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/mapper/NoticeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/mapper/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/mapper/StudentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/mapper/TeacherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/mapper/TeacherMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../bigwork/src/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../bigwork/src/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo10/src/main/java/servlet/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo10/src/main/java/servlet/CartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo10/src/main/webapp/itemList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo10/src/main/webapp/itemList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo11/WEB-INF/lib/msbase.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo11/WEB-INF/lib/mssqlserver.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo11/WEB-INF/lib/msutil.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo11/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo13/src/main/java/org/example/demo13/JDBConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo13/src/main/webapp/clue_on.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo13/src/main/webapp/clue_on.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo13/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo13/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo14/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo14/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo14/src/main/java/com/TestJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo14/src/main/java/com/TestJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo14/src/main/webapp/clue_on.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo14/src/main/webapp/clue_on.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo14/src/main/webapp/lib/mysql-connector-java-5.1.49.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo17/src/main/java/org/example/demo17/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo17/src/main/java/org/example/demo17/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo2/src/main/webapp/circle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo2/src/main/webapp/circle.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo2/src/main/webapp/display.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo5/src/main/java/com/JDBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo5/src/main/java/com/JDBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo5/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo5/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo5/src/main/webapp/page1.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo6/src/main/webapp/WEB-INF/styles" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo7/src/main/webapp/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo7/src/main/webapp/error.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo7/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo7/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo7/src/main/webapp/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo7/src/main/webapp/success.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo8/src/main/webapp/calculate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo8/src/main/webapp/calculate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../demo9/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../demo9/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../guochengProject/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../guochengProject/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../guochengProject/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../guochengProject/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../guochengProject/src/main/java/sunyang/dao/UserinfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../guochengProject/src/main/java/sunyang/dao/UserinfoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../guochengProject/src/main/java/sunyang/util/SafeCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../guochengProject/src/main/java/sunyang/util/SafeCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../guochengProject/src/main/java/sunyang/webtier/UserinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../guochengProject/src/main/java/sunyang/webtier/UserinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../guochengProject/src/main/webapp/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../guochengProject/src/main/webapp/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../guochengProject/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../guochengProject/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/sunyang/dao/UserinfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/sunyang/dao/UserinfoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/sunyang/util/SafeCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/sunyang/util/SafeCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/sunyang/webtier/UserinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/sunyang/webtier/UserinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../hxh/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../hxh/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../hxh/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../hxh/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../hxh/hxh.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../hxh/picture/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../hxh/picture/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../hxh/picture/m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../li/src/main/java/org/example/li/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../li/src/main/java/org/example/li/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../li/src/main/java/org/example/li/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../li/src/main/java/org/example/li/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../shiyan5/src/main/java/org/example/shiyan5/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../shiyan5/src/main/java/org/example/shiyan5/JDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../shiyan5/src/main/java/org/example/shiyan5/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../shiyan5/src/main/java/org/example/shiyan5/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzj - 副本 (3)/.idea/artifacts/tzj_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzj - 副本 (3)/src/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzj - 副本 (3)/src/Main/resources/output_images/0_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzj - 副本 (4)/tzj.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzj/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../tzj/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzj/allzip.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzjmaven/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzjmaven/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzjmaven/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzjmaven/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzjmaven/src/it/settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzjmaven/src/it/simple-it/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzjmaven/src/it/simple-it/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../tzjmaven/src/main/java/org/example/MyMojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../untitled1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../untitled1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../untitled2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../untitled2/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../untitled4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../untitled4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../untitled4/src/FaceDetectionCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../untitled4/src/FaceDetectionCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../untitled4/src/FaceDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../untitled4/src/FaceDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../untitled4/untitled4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../untitled4/untitled4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../untitled5/lib/mysql-connector-java-5.1.49.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../untitled5/src/Conn.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../untitled5/src/Conn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../untitled5/untitled5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../untitled5/untitled5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../新建文件夹/2024javadesign2" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../新建文件夹/2024javadesign2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../新建文件夹/pintu/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../新建文件夹/pintu/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../新建文件夹/pintu/allzip.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../新建文件夹/pintu/music/C418.wav" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2q70BC5nLxAPI8sBVrY9PlmA9ww" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/HP/IdeaProjects/gwc/src/main/webapp/CSS",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19072.14" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19072.14" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f004c78e-dd78-4bda-82b4-272ff221f532" name="Changes" comment="" />
+      <created>1733998169231</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733998169231</updated>
+      <workItem from="1733998170258" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

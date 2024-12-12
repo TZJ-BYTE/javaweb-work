@@ -1,5 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" import="com.demo.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="model.Userinfo" %>
+<%@ page import="model.Shoppingcart" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -129,8 +131,7 @@
             }
         %>
     </p>
-    <a href="user.do?flag=2">退出登录</a>
-    <form action="cart.do?flag=4" method="post">
+    <form action="cart.do?flag=2" method="post">
         <ul class="product-list">
             <%
                 String[] colors = {"bg-color-1", "bg-color-2", "bg-color-3", "bg-color-4", "bg-color-5"};
@@ -142,10 +143,9 @@
                 <div class="product-details">
                     <span class="product-name"><%=sc.getGoodsName()%></span>
                     <span class="product-price">价格：<%=sc.getPrice()%></span>
-                    <span class="product-quantity">数量：<%=sc.getNumber()%></span>
                     <span class="product-subtotal">小计：<%=sc.getNumber() * sc.getPrice()%></span>
                 </div>
-                <a href="cart.do?flag=3&id=<%=sc.getId()%>">删除商品</a>
+                <a href="cart.do?flag=1&id=<%=sc.getId()%>">删除商品</a>
             </li>
             <%
                 }

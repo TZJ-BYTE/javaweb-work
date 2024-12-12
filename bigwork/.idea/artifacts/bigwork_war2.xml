@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bigwork:war2">
+    <output-path>$PROJECT_DIR$/out/artifacts/bigwork_war2</output-path>
+    <root id="archive" name="bigwork_war.war">
+      <element id="artifact" artifact-name="bigwork:war exploded" />
+    </root>
+  </artifact>
+</component>
